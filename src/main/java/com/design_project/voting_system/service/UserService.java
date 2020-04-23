@@ -38,8 +38,9 @@ public class UserService {
         return "User deleted";
     }
 
+
     public Object validateNIC(String NICnumber) {
-        User user = userRepository.findByNICnumber(NICnumber);
+        User user = userRepository.findByNicNumber(NICnumber);
         if (user != null) {
             if (!user.isHasVoted()) {
                 user.setHasVoted(true);

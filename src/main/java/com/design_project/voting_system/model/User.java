@@ -12,10 +12,10 @@ public class User {
     private String id;
     private String fullname;
     private String address;
-    private String NICnumber;
+    private String nicNumber;
     private String ele_vol;
     private String ele_district;
-    private String figerPrint;
+    private String fingerPrint;
     private boolean hasVoted;
 
     public User(){
@@ -46,12 +46,12 @@ public class User {
         this.address = address;
     }
 
-    public String getNICnumber() {
-        return NICnumber;
+    public String getNicNumber() {
+        return nicNumber;
     }
 
-    public void setNICnumber(String NICnumber) {
-        this.NICnumber = NICnumber;
+    public void setNicNumber(String nicNumber) {
+        this.nicNumber = nicNumber;
     }
 
     public String getEle_vol() {
@@ -70,12 +70,12 @@ public class User {
         this.ele_district = ele_district;
     }
 
-    public String getFigerPrint() {
-        return figerPrint;
+    public String getFingerPrint() {
+        return fingerPrint;
     }
 
-    public void setFigerPrint(String figerPrint) {
-        this.figerPrint = figerPrint;
+    public void setFingerPrint(String fingerPrint) {
+        this.fingerPrint = fingerPrint;
     }
 
     public boolean isHasVoted() {
