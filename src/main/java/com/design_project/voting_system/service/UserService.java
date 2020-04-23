@@ -44,6 +44,7 @@ public class UserService {
         if (user != null) {
             if (!user.isHasVoted()) {
                 user.setHasVoted(true);
+                userRepository.save(user);
                 return new ResponseEntity(HttpStatus.OK);
             } else {
                 return new ResponseEntity(HttpStatus.BAD_REQUEST);
