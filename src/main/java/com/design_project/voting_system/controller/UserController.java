@@ -37,4 +37,9 @@ public class UserController {
         return userService.deleteUser(id);
 
     }
+    @RequestMapping("/NICvalitation")
+    public Object validateNIC(@RequestParam String NICnumber){
+        return userService.validateNIC(NICnumber);
+
+    }
 }
