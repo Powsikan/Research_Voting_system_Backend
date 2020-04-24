@@ -12,7 +12,7 @@ public class User {
     private String id;
     private String fullname;
     private String address;
-    private String NIC_number;
+    private String NICnumber;
     private String ele_vol;
     private String ele_district;
 
