@@ -40,9 +40,16 @@ public class UserController {
 
     }
     @ResponseBody
-    @RequestMapping("/NICvalidation")
+    @RequestMapping("/NICValidation")
     public Object validateNIC(@RequestParam String NICnumber){
         return userService.validateNIC(NICnumber);
+
+    }
+
+    @ResponseBody
+    @RequestMapping("/FingerPrintValidation")
+    public Object validateFingerPrint(@RequestParam String NICnumber,String fingerPrint){
+        return userService.validateFingerPrint(NICnumber,fingerPrint);
 
     }
 }
