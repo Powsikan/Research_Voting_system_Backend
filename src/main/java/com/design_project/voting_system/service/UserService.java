@@ -57,7 +57,7 @@ public class UserService {
     public Object validateFingerPrint(String NICnumber, String fingerPrint) {
         User user = userRepository.findByNicNumber(NICnumber);
 
-        if (fingerPrint == user.getFingerPrint()) {
+        if (fingerPrint.equals(user.getFingerPrint())) {
             user.setHasVoted(true);
             userRepository.save(user);
             return new ResponseEntity(HttpStatus.OK);
