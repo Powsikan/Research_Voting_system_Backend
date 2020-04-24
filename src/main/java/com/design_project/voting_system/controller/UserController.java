@@ -48,7 +48,7 @@ public class UserController {
 
     @ResponseBody
     @RequestMapping("/FingerPrintValidation")
-    public Object validateFingerPrint(@RequestParam String NICnumber,String fingerPrint){
+    public Object validateFingerPrint(@RequestParam String NICnumber,@RequestParam String fingerPrint){
         return userService.validateFingerPrint(NICnumber,fingerPrint);
 
     }
