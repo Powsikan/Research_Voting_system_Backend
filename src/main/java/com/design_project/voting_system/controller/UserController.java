@@ -39,17 +39,5 @@ public class UserController {
         return userService.deleteUser(id);
 
     }
-    @ResponseBody
-    @RequestMapping("/NICValidation")
-    public Object validateNIC(@RequestParam String NICnumber){
-        return userService.validateNIC(NICnumber);
 
-    }
-
-    @ResponseBody
-    @RequestMapping("/FingerPrintValidation")
-    public Object validateFingerPrint(@RequestParam String NICnumber,@RequestParam String fingerPrint){
-        return userService.validateFingerPrint(NICnumber,fingerPrint);
-
-    }
 }
