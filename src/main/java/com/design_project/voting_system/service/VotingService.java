@@ -24,7 +24,7 @@ public class VotingService {
         if (user != null) {
             if (!user.isHasVoted()) {
 
-                return new ResponseEntity(HttpStatus.OK);
+                return new ResponseEntity(user,HttpStatus.OK);
             } else {
                 return new ResponseEntity(HttpStatus.BAD_REQUEST);
             }
