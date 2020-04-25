@@ -7,6 +7,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 
@@ -15,6 +18,7 @@ public class VotingService {
     @Autowired
     private UserRepository userRepository;
 
+    @ResponseBody
     public Object validateNIC(String NICnumber) {
         User user = userRepository.findByNicNumber(NICnumber);
         if (user != null) {
@@ -25,7 +29,7 @@ public class VotingService {
                 return new ResponseEntity(HttpStatus.BAD_REQUEST);
             }
         } else {
-            return new ResponseEntity(HttpStatus.NOT_FOUND);
+            return new  ResponseEntity(HttpStatus.NOT_FOUND);
         }
 
     }
