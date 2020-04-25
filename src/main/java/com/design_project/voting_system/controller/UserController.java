@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
+
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -35,6 +37,12 @@ public class UserController {
     @DeleteMapping("delete/{id}")
     public String deleteUser(@PathVariable String id) {
         return userService.deleteUser(id);
+
+    }
+    @ResponseBody
+    @RequestMapping("/NICvalidation")
+    public Object validateNIC(@RequestParam String NICnumber){
+        return userService.validateNIC(NICnumber);
 
     }
 }
