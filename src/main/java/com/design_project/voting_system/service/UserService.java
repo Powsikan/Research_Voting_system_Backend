@@ -39,18 +39,8 @@ public class UserService {
     }
 
 
-    public Object validateNIC(String NICnumber) {
-        User user = userRepository.findByNicNumber(NICnumber);
-        if (user != null) {
-            if (!user.isHasVoted()) {
 
-                return new ResponseEntity(HttpStatus.OK);
-            } else {
-                return new ResponseEntity(HttpStatus.BAD_REQUEST);
-            }
-        } else {
-            return new ResponseEntity(HttpStatus.NOT_FOUND);
-        }
 
-    }
+
 }
+
