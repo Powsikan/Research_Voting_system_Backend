@@ -26,10 +26,10 @@ public class VotingService {
 
                 return new ResponseEntity(user,HttpStatus.OK);
             } else {
-                return new ResponseEntity(HttpStatus.BAD_REQUEST);
+                return new ResponseEntity("Already voted",HttpStatus.BAD_REQUEST);
             }
         } else {
-            return new  ResponseEntity(HttpStatus.NOT_FOUND);
+            return new  ResponseEntity("You are not eligible for vote",HttpStatus.NOT_FOUND);
         }
 
     }
@@ -42,7 +42,7 @@ public class VotingService {
             userRepository.save(user);
             return new ResponseEntity(HttpStatus.OK);
         } else {
-            return new ResponseEntity(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity("Finger print doesn't match",HttpStatus.BAD_REQUEST);
         }
     }
 }
