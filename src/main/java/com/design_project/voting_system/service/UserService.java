@@ -2,10 +2,7 @@ package com.design_project.voting_system.service;
 
 import com.design_project.voting_system.model.User;
 import com.design_project.voting_system.repository.UserRepository;
-import org.apache.tomcat.jni.Status;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
