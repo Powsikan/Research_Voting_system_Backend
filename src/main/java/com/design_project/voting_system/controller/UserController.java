@@ -18,18 +18,18 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/addUser")
+    @PostMapping("/add")
     public String addUser(@RequestBody User user) {
         return userService.addUser(user);
 
     }
 
-    @GetMapping("/allUsers")
+    @GetMapping("/all")
     public List<User> getUsers() {
         return userService.getUsers();
     }
 
-    @GetMapping("allUsers/{id}")
+    @GetMapping("all/{id}")
     public Optional<User> getUser(@PathVariable String id) {
         return userService.getUser(id);
     }

@@ -2,9 +2,7 @@ package com.design_project.voting_system.controller;
 
 
 import com.design_project.voting_system.model.Candidate;
-import com.design_project.voting_system.model.User;
 import com.design_project.voting_system.service.CandidateService;
-import com.design_project.voting_system.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,18 +16,18 @@ public class CandidateController {
     @Autowired
     private CandidateService candidateService;
 
-    @PostMapping("/addCandidate")
+    @PostMapping("/add")
     public String addCandidate(@RequestBody Candidate candidate) {
         return candidateService.addCandidate(candidate);
 
     }
 
-    @GetMapping("/allCandidates")
+    @GetMapping("/all")
     public List<Candidate> getCandidates() {
         return candidateService.getCandidates();
     }
 
-    @GetMapping("allCandidates/{id}")
+    @GetMapping("all/{id}")
     public Optional<Candidate> getCandidates(@PathVariable String id) {
         return candidateService.getCandidate(id);
     }

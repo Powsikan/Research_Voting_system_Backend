@@ -2,9 +2,7 @@ package com.design_project.voting_system.service;
 
 
 import com.design_project.voting_system.model.Candidate;
-import com.design_project.voting_system.model.User;
 import com.design_project.voting_system.repository.CandidateRepository;
-import com.design_project.voting_system.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
