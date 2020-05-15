@@ -14,8 +14,8 @@ public class VotingController {
     private VotingService votingService;
 
     @ResponseBody
-    @RequestMapping("/NICValidation")
-    public Object validateNIC(@RequestParam String NICnumber) {
+    @RequestMapping("/NICValidation/{NICnumber}")
+    public Object validateNIC(@PathVariable String NICnumber) {
         return votingService.validateNIC(NICnumber);
 
     }
