@@ -21,16 +21,16 @@ public class VotingService {
     @ResponseBody
     public Object validateNIC(String NICnumber) {
         User user = userRepository.findByNicNumber(NICnumber);
-        if (user != null) {
-            if (!user.isHasVoted()) {
+            if (user != null) {
+                if (!user.isHasVoted()) {
 
-                return new ResponseEntity(user,HttpStatus.OK);
+                    return new ResponseEntity(user, HttpStatus.OK);
+                } else {
+                    return new ResponseEntity("Already voted", HttpStatus.BAD_REQUEST);
+                }
             } else {
-                return new ResponseEntity("Already voted",HttpStatus.BAD_REQUEST);
+                return new ResponseEntity("You are not eligible for vote", HttpStatus.NOT_FOUND);
             }
-        } else {
-            return new  ResponseEntity("You are not eligible for vote",HttpStatus.NOT_FOUND);
-        }
 
     }
 
