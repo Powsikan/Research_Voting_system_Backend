@@ -54,9 +54,10 @@ public class VotingService {
         User user = userRepository.findByNicNumber(NICnumber);
         user.setHasVoted(true);
         userRepository.save(user);
-
-        Optional<Candidate> candidate = candidateRepository.findById(id);
+        Candidate candidate=candidateRepository.findById(id).get();
         candidate.setTotal_votes(candidate.getTotal_votes()+1);
+        candidateRepository.save(candidate);
+        return "voting succeeded";
 
     }
 }

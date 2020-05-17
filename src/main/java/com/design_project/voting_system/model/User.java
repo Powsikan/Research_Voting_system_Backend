@@ -10,7 +10,7 @@ public class User {
 
     @Id
     private String id;
-    private String fullname;
+    private String fullName;
     private String address;
     private String nicNumber;
     private String ele_vol;
