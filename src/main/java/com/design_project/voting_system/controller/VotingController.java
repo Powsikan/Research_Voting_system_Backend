@@ -21,8 +21,8 @@ public class VotingController {
     }
 
     @ResponseBody
-    @RequestMapping("/FingerPrintValidation")
-    public Object validateFingerPrint(@RequestParam String NICnumber, @RequestParam String fingerPrint) {
+    @RequestMapping("/FingerPrintValidation/{NICnumber}")
+    public Object validateFingerPrint(@PathVariable String NICnumber, @RequestParam String fingerPrint) {
         return votingService.validateFingerPrint(NICnumber, fingerPrint);
 
     }
