@@ -29,6 +29,6 @@ public class VotingController {
 
     @PostMapping("/votefor/{NICnumber}")
     public Object performVoting(@PathVariable String NICnumber , @RequestParam String id){
-        return votingService.perfomVoting(NICnumber,id);
+        return votingService.performVoting(NICnumber,id);
     }
 }
