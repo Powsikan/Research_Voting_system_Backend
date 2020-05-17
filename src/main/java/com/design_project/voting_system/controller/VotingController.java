@@ -26,4 +26,9 @@ public class VotingController {
         return votingService.validateFingerPrint(NICnumber, fingerPrint);
 
     }
+
+    @PostMapping
+    public Object performVoting(){
+        return 1;
+    }
 }
