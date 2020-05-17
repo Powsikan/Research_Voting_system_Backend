@@ -55,7 +55,7 @@ public class VotingService {
         user.setHasVoted(true);
         userRepository.save(user);
 
-        Candidate candidate = candidateRepository.findById(id);
+        Optional<Candidate> candidate = candidateRepository.findById(id);
         candidate.setTotal_votes(candidate.getTotal_votes()+1);
 
     }
