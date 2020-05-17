@@ -27,8 +27,8 @@ public class VotingController {
 
     }
 
-    @PostMapping
-    public Object performVoting(){
-        return 1;
+    @PostMapping("/votefor/{NICnumber}")
+    public Object performVoting(@){
+        return votingService.perfomVoting();
     }
 }
