@@ -1,7 +1,5 @@
 package com.design_project.voting_system.service;
 
-import com.ragul.leaf.exception.FileStorageException;
-import com.ragul.leaf.exception.MyFileNotFoundException;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
