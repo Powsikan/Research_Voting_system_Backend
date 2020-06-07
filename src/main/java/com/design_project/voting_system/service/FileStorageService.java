@@ -1,5 +1,7 @@
 package com.design_project.voting_system.service;
 
+import com.design_project.voting_system.exception.FileStorageException;
+import com.design_project.voting_system.exception.MyFileNotFoundException;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
