@@ -7,6 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @Document
 public class Candidate {
+
     @Id
     private String id;
     private String name;

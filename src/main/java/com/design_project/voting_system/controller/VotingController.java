@@ -26,4 +26,9 @@ public class VotingController {
         return votingService.validateFingerPrint(NICnumber, fingerPrint);
 
     }
+
+    @PostMapping("/votefor/{NICnumber}")
+    public Object performVoting(@PathVariable String NICnumber , @RequestParam String id){
+        return votingService.performVoting(NICnumber,id);
+    }
 }

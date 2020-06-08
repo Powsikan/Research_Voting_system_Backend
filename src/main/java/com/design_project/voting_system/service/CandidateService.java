@@ -5,6 +5,8 @@ import com.design_project.voting_system.model.Candidate;
 import com.design_project.voting_system.repository.CandidateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,10 +15,23 @@ import java.util.Optional;
 public class CandidateService {
     @Autowired
     private CandidateRepository candidateRepository;
+    @Autowired
+    private FileStorageService fileStorageService;
 
+    public String addCandidate(Candidate candidate, MultipartFile file) {
+        String fileName = fileStorageService.storeFile(file);
 
-    public String addCandidate(Candidate candidate) {
-        candidateRepository.save(candidate);
+        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
+                .path("uploads/")
+                .path(fileName)
+                .toUriString();
+
+        Candidate candidate1=new Candidate();
+
+        candidate1.setName(candidate.getName());
+        candidate1.setParty(candidate.getParty());
+        candidate1.setSymbol(fileDownloadUri);
+        candidateRepository.save(candidate1);
         return "Candidate added";
     }
 
