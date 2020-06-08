@@ -22,7 +22,7 @@ public class CandidateService {
         String fileName = fileStorageService.storeFile(file);
 
         String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("uploads/")
+                .path("candidates/uploads/")
                 .path(fileName)
                 .toUriString();
 
