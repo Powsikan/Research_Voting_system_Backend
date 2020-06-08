@@ -26,7 +26,13 @@ public class CandidateService {
                 .path(fileName)
                 .toUriString();
 
-        candidateRepository.save(candidate);
+        Candidate candidate1=new Candidate();
+
+        candidate1.setName(candidate.getName());
+        candidate1.setParty(candidate.getParty());
+        candidate1.setSymbol(fileDownloadUri);
+
+        candidateRepository.save(candidate1);
         return "Candidate added";
     }
 
