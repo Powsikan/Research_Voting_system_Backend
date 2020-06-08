@@ -31,7 +31,6 @@ public class CandidateService {
         candidate1.setName(candidate.getName());
         candidate1.setParty(candidate.getParty());
         candidate1.setSymbol(fileDownloadUri);
-
         candidateRepository.save(candidate1);
         return "Candidate added";
     }
