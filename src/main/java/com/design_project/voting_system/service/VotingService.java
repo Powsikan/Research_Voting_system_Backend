@@ -11,8 +11,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.Optional;
-
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 
@@ -52,6 +50,9 @@ public class VotingService {
 
     public Object performVoting(String NICnumber, String id) {
         User user = userRepository.findByNicNumber(NICnumber);
+        if (user.isHasVoted()==true){
+            return new ResponseEntity("You Already Voted.",HttpStatus.BAD_REQUEST);
+        }
         user.setHasVoted(true);
         userRepository.save(user);
         Candidate candidate=candidateRepository.findById(id).get();
