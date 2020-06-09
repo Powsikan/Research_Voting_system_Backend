@@ -32,7 +32,7 @@ public class CandidateController {
     private static final Logger logger = LoggerFactory.getLogger(CandidateController.class);
 
     @PostMapping("/add")
-    public String addCandidate(@RequestParam("file") MultipartFile file ,@RequestBody Candidate candidate) {
+    public String addCandidate(@RequestParam("file") MultipartFile file ,@ModelAttribute Candidate candidate) {
         return candidateService.addCandidate(file,candidate);
 
     }
