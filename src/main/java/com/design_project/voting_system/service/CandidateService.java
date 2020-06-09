@@ -28,9 +28,12 @@ public class CandidateService {
 
         Candidate candidate1=new Candidate();
 
-        candidate1.setName(name);
-        candidate1.setParty(party);
+        candidate1.setName(candidate.getName());
+        candidate1.setParty(candidate.getParty());
         candidate1.setSymbol(fileDownloadUri);
+        candidate1.setNo_of_votes_ele_vol(candidate.getNo_of_votes_ele_vol());
+        candidate1.setNo_of_votes_ele_dist(candidate.getNo_of_votes_ele_dist());
+        candidate1.setTotal_votes(candidate.getTotal_votes());
         candidateRepository.save(candidate1);
         return "Candidate added";
     }
