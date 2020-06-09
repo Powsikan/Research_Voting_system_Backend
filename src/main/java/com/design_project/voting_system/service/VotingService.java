@@ -53,11 +53,12 @@ public class VotingService {
         if (user.isHasVoted()==true){
             return new ResponseEntity("You Already Voted.",HttpStatus.BAD_REQUEST);
         }
-        user.setHasVoted(true);
-        userRepository.save(user);
+
         Candidate candidate=candidateRepository.findById(id).get();
         candidate.setTotal_votes(candidate.getTotal_votes()+1);
         candidateRepository.save(candidate);
+        user.setHasVoted(true);
+        userRepository.save(user);
         return "voting succeeded";
 
     }
