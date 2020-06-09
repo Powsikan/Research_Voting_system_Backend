@@ -18,7 +18,7 @@ public class CandidateService {
     @Autowired
     private FileStorageService fileStorageService;
 
-    public String addCandidate( MultipartFile file,String name ,String party) {
+    public String addCandidate( MultipartFile file,Candidate candidate) {
         String fileName = fileStorageService.storeFile(file);
 
         String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
