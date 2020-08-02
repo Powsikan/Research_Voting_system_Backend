@@ -26,15 +26,15 @@ public class CandidateService {
                 .path(fileName)
                 .toUriString();
 
-        Candidate candidate1=new Candidate();
+        Candidate candidate=new Candidate();
 
-        candidate1.setName(newCandidate.getName());
-        candidate1.setParty(newCandidate.getParty());
-        candidate1.setSymbol(fileDownloadUri);
-        candidate1.setNo_of_votes_ele_vol(newCandidate.getNo_of_votes_ele_vol());
-        candidate1.setNo_of_votes_ele_dist(newCandidate.getNo_of_votes_ele_dist());
-        candidate1.setTotal_votes(newCandidate.getTotal_votes());
-        candidateRepository.save(candidate1);
+        candidate.setName(newCandidate.getName());
+        candidate.setParty(newCandidate.getParty());
+        candidate.setSymbol(fileDownloadUri);
+        candidate.setNo_of_votes_ele_vol(newCandidate.getNo_of_votes_ele_vol());
+        candidate.setNo_of_votes_ele_dist(newCandidate.getNo_of_votes_ele_dist());
+        candidate.setTotal_votes(newCandidate.getTotal_votes());
+        candidateRepository.save(candidate);
         return "Candidate added";
     }
 
