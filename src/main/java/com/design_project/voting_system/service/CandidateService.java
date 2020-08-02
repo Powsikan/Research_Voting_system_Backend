@@ -18,7 +18,7 @@ public class CandidateService {
     @Autowired
     private FileStorageService fileStorageService;
 
-    public String addCandidate( MultipartFile file,Candidate candidate) {
+    public String addCandidate( MultipartFile file,Candidate newCandidate) {
         String fileName = fileStorageService.storeFile(file);
 
         String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
@@ -28,12 +28,12 @@ public class CandidateService {
 
         Candidate candidate1=new Candidate();
 
-        candidate1.setName(candidate.getName());
-        candidate1.setParty(candidate.getParty());
+        candidate1.setName(newCandidate.getName());
+        candidate1.setParty(newCandidate.getParty());
         candidate1.setSymbol(fileDownloadUri);
-        candidate1.setNo_of_votes_ele_vol(candidate.getNo_of_votes_ele_vol());
-        candidate1.setNo_of_votes_ele_dist(candidate.getNo_of_votes_ele_dist());
-        candidate1.setTotal_votes(candidate.getTotal_votes());
+        candidate1.setNo_of_votes_ele_vol(newCandidate.getNo_of_votes_ele_vol());
+        candidate1.setNo_of_votes_ele_dist(newCandidate.getNo_of_votes_ele_dist());
+        candidate1.setTotal_votes(newCandidate.getTotal_votes());
         candidateRepository.save(candidate1);
         return "Candidate added";
     }
