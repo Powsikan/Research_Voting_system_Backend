@@ -1,4 +1,4 @@
-package com.design_project.voting_system.model;
+package com.research.voting_system.model;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;

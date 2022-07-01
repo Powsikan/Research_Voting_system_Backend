@@ -1,8 +1,8 @@
-package com.design_project.voting_system.controller;
+package com.research.voting_system.controller;
 
 
-import com.design_project.voting_system.model.User;
-import com.design_project.voting_system.service.UserService;
+import com.research.voting_system.model.User;
+import com.research.voting_system.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

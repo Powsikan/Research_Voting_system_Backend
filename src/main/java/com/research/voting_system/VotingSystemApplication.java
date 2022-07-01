@@ -1,4 +1,4 @@
-package com.design_project.voting_system;
+package com.research.voting_system;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

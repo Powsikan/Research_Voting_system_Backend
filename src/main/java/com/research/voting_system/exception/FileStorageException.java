@@ -1,4 +1,4 @@
-package com.design_project.voting_system.exception;
+package com.research.voting_system.exception;
 
 public class FileStorageException extends RuntimeException {
     public FileStorageException(String message) {

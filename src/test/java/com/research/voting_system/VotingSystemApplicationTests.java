@@ -1,4 +1,4 @@
-package com.design_project.voting_system;
+package com.research.voting_system;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

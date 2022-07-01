@@ -1,6 +1,6 @@
-package com.design_project.voting_system.repository;
+package com.research.voting_system.repository;
 
-import com.design_project.voting_system.model.User;
+import com.research.voting_system.model.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,9 +1,9 @@
-package com.design_project.voting_system.controller;
+package com.research.voting_system.controller;
 
 
-import com.design_project.voting_system.model.Candidate;
-import com.design_project.voting_system.service.CandidateService;
-import com.design_project.voting_system.service.FileStorageService;
+import com.research.voting_system.model.Candidate;
+import com.research.voting_system.service.CandidateService;
+import com.research.voting_system.service.FileStorageService;
 import lombok.SneakyThrows;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
