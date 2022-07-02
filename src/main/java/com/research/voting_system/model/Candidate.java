@@ -1,11 +1,15 @@
 package com.research.voting_system.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @Document
+@AllArgsConstructor
+@NoArgsConstructor
 public class Candidate {
 
     @Id
@@ -17,6 +21,4 @@ public class Candidate {
     private Long no_of_votes_ele_dist;
     private Long total_votes;
 
-    public Candidate() {
-    }
 }

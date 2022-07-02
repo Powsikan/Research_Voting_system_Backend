@@ -41,20 +41,19 @@ public class VotingService {
     public Object validateFingerPrint(String NICnumber, String fingerPrint) {
         User user = userRepository.findByNicNumber(NICnumber);
 
-        if (fingerPrint.equals(user.getFingerPrint())) {
-            return new ResponseEntity(HttpStatus.OK);
-        } else {
+        if (!fingerPrint.equals(user.getFingerPrint())){
             return new ResponseEntity("Finger print doesn't match", HttpStatus.BAD_REQUEST);
         }
+        return new ResponseEntity(HttpStatus.OK);
     }
 
-    public Object performVoting(String NICnumber, String id) {
+    public Object performVoting(String NICnumber, String candidateId) {
         User user = userRepository.findByNicNumber(NICnumber);
         if (user.isHasVoted() == true) {
             return new ResponseEntity("You Already Voted.", HttpStatus.BAD_REQUEST);
         }
 
-        Candidate candidate = candidateRepository.findById(id).get();
+        Candidate candidate = candidateRepository.findById(candidateId).get();
         candidate.setTotal_votes(candidate.getTotal_votes() + 1);
         candidateRepository.save(candidate);
         user.setHasVoted(true);
